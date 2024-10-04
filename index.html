@@ -17,6 +17,111 @@
 
 
 
+
+
+
+<!-- VPN Detect Section -->
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>VPN Detection</title>
+
+        <script defer src="detect.js"></script>
+        <script defer src="index.js"></script>
+    </head>
+    <body>
+        <div id="target"></div>
+    </body>
+</html>
+</section><!-- /.VPN Detect -->
+
+
+
+
+
+
+
+
+<!-- detect.js script Section -->
+<script data-cfasync="false" type="text/javascript"> const API_KEY = 'e546d297d6b841fd869cad35aadd10dc'
+const IP_URL = `https://api.ipgeolocation.io/getip`
+const LOC_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}&ip=`
+
+function getRealLocation() {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone
+}
+
+async function fetchJson(url) {
+    return await (await fetch(url)).json()
+}
+
+async function getSimulatedLocation() {
+    const ip = (await fetchJson(IP_URL)).ip
+    return (await fetchJson(LOC_URL + ip)).time_zone.name
+}
+
+async function detectVPN() {
+    const real = getRealLocation()
+    const simulated = await getSimulatedLocation()
+    return {
+        result: real == simulated,
+        real,
+        simulated
+    }
+} </script>
+</section><!-- /.detect.js script -->
+
+
+
+
+
+
+
+<!-- index.js script Section -->
+<script data-cfasync="false" type="text/javascript"> const target = document.getElementById('target')
+
+async function runDetect() {
+    let result, real, simulated
+    try {
+        res = await detectVPN()
+        result = res.result
+        real = res.real
+        simulated = res.simulated
+    }
+    catch {
+        target.innerHTML = 'Failed to request simulated location!<br>'
+        return
+    }
+
+    if (result) {
+        target.innerHTML = `
+            VPN detected!<br>
+            <b>Real location:</b> ${real}<br>
+            <b>Simulated location:</b> ${simulated}<br>
+        `
+    }
+    else {
+        target.innerHTML = `
+            VPN not detected.<br>
+            <b>Location:</b> ${real}<br>
+        `
+    }
+}
+
+target.innerText = 'Detecting...'
+runDetect() </script>
+</section><!-- /.index.js script -->
+
+
+
+
+
+
+
 <!-- Popunder Section -->
 <!DOCTYPE html>
 <html lang="en">
@@ -88,57 +193,21 @@
 
 
 <!-- CPA Locker Section -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>CPA Locker!</title>
 
-<!-- import the webpage's stylesheet -->
-<link rel="stylesheet" href="/style.css">
-
-<!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-</head>
-<body>
-  <h1>CPA Locker!</h1>
-
-  <p>
-    CPA Locker <a href="http://locker-cpa.eu/iframeLoader/578718b0-6ab5-11ef-ac5a-6fcafac0196a?.js">CPA Locker</a>!
-<script type="text/javascript" id="cpljs-578718b0-6ab5-11ef-ac5a-6fcafac0196a" src="http://locker-cpa.eu/iframeLoader/578718b0-6ab5-11ef-ac5a-6fcafac0196a?"></script><button onclick="showLocker('578718b0-6ab5-11ef-ac5a-6fcafac0196a')">Click me</button>
-  </p>
-
-  <!-- include the Glitch button to show what the webpage is about and 
-       to make it easier for folks to view source and remix -->
-  <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-  <script src="js/locker-cpa.euiframeLoader578718b0-6ab5-11ef-ac5a-6fcafac0196a.js" defer></script>
-</body>	
-</html>
-</section><!-- /.CPA Locker -->
-
-
-
-
-
-
-<!-- START CPA Locker TAG -->
-<script>
-window.adk_pdisp = {
-	'h' : 'xml.qualiclicks.com', 
-	'f' : 691076,
-	'a' : 'l4w7Aa',
-	'ps' : [1],
-	'cin' : 4,
-	's' : '',
-	'q' : [],
-	't' : 1
-};
+<p>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '578718b0-6ab5-11ef-ac5a-6fcafac0196a?',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
 </script>
 <script type="text/javascript" id="cpljs-578718b0-6ab5-11ef-ac5a-6fcafac0196a" src="http://locker-cpa.eu/iframeLoader/578718b0-6ab5-11ef-ac5a-6fcafac0196a?"></script><button onclick="showLocker('578718b0-6ab5-11ef-ac5a-6fcafac0196a')">Click me</button>
-<!-- CPA Locker TAG -->
+    </p>
+</section><!-- /.CPA Locker -->
+
 
 
 
@@ -222,7 +291,6 @@ nodesrc : true
 i.inpagepush('show');
 })(window, document);
 </script>
-
 
 
 
@@ -406,6 +474,9 @@ i.intstl('show');
                         <script src="js/static.ezmob.comintstlintstl..js"></script>
                         <script src="js/static.ezmob.cominpageinpage.js"></script>
                         <script src="js/static.ezmob.cominpageinpage..js"></script>
+                        <script src="js/detect.js"></script>
+                        <script src="js/index.js"></script>
+                        <script src="js/api.http"></script>
 
 			<script>
 			$(document).ready(function () {
