@@ -1,4 +1,4 @@
-const API_KEY = 'e546d297d6b841fd869cad35aadd10dc:https://ipgeolocation.io'
+const API_KEY = 'e546d297d6b841fd869cad35aadd10dc'
 const IP_URL = `https://api.ipgeolocation.io/getip`
 const LOC_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}&ip=`
 
