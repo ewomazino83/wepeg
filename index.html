@@ -215,7 +215,17 @@ window.adk_pdisp = {
 
 
 <!-- Redirect link 691077  Section -->
-https://xml.qualiclicks.com/redirect?feed=691077&auth=akDVnJ&url=https://ewomazino83.github.io/wepeg/&subid=https://ewomazino83.github.io/wepeg/';
+<script>
+const f = document.getElementById('form');
+const q = document.getElementById('query');
+function submitted(event) {
+event.preventDefault();
+const url = 'https://xml.qualiclicks.com/redirect?feed=691077&auth=akDVnJ&query=' + q.value + '&url=https://ewomazino83.github.io/wepeg/';
+const win = window.open(url, '_blank');
+win.focus();
+}
+f.addEventListener('submit', submitted);
+</script>
 </section><!-- /.Redirect link 691077 -->
 
 
