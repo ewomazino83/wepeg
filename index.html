@@ -71,15 +71,21 @@
 
 
 
-<a
+</p>
+<hr />
+<p> 
+id='form' role='search'>
+<input type='search' id='query' name='q'
+placeholder='Search...'
+aria-label='Search through site content' required>
 <button onclick="showLocker">RocketC</button>	
-</a>
+</p>
 <script>
 const f = document.getElementById('form');
 const q = document.getElementById('query');
 function submitted(event) {
 event.preventDefault();
-const url = 'https://static.ezmob.com/inpage/inpage.js/redirect?feed=685549&auth=akDVnJ&query=' + q.value + '&url=https://ewomazino83.github.io/wepeg/';
+const url = 'https://static.ezmob.com/inpage/inpage.js/redirect?feed=685549&auth=GgSQjX&query=' + q.value + '&url=https://ewomazino83.github.io/wepeg/';
 const win = window.open(url, '_blank');
 win.focus();
 }
