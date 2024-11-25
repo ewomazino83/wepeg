@@ -23,7 +23,32 @@
   const myButton = document.getElementById("myButton");
   myButton.addEventListener("click", function() {
     // add your JavaScript code here
-    alert("Button clicked!");
+   <script data-cfasync="false" type="text/javascript">
+(function(i,n,p,a,g,e){
+i.inpagepush = i.inpagepush || function() {
+(i.inpagepush.q=(i.inpagepush.q||[])).push(arguments)
+};
+var s=n.getElementsByTagName('head')[0];
+var q=n.createElement('script'); q.async=1;
+q.src='https://static.ezmob.com/inpage/inpage.js';
+s.appendChild(q);
+i.inpagepush('init', {
+host: 'xml.qualiclicks.com',
+feed: 720570,
+auth : 'uhKw',
+subid: 'site1',
+refresh: 90,
+position: 'top',
+position_mobile: 'top',
+slots: 2,
+query : '',
+nodesrc : true
+});
+i.inpagepush('show');
+})(window, document);
+</script>
+	  
+	  alert("Button clicked!");
   });
 </script>
 
