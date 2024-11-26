@@ -29,15 +29,16 @@
 </script>
 
 
-	
 
 
 
-	
 
-<button onclick="myFunction()">EZMOB</button>
-    <script>
-	    function myFunction(window.adk_pdisp = {
+<button id="myButton">Condone
+
+<script>
+  const myButton = document.getElementById("myButton");
+  myButton.addEventListener("click", function() {
+    window.adk_pdisp = {
 	'h' : 'xml.qualiclicks.com', 
 	'f' : 720388,
 	'a' : '9YMX',
@@ -46,17 +47,41 @@
 	's' : '',
 	'q' : [],
 	't' : 1
-};) {
-            alert('Hello, this is an inline function!');
-        }
-    </script>
+};
+	  // add your JavaScript code here
+    alert("Button clicked!");
+  });
+</script>
+</button>
+
 
 
 
 	
+	
+<script>
+window.adk_pdisp = {
+	'h' : 'xml.qualiclicks.com', 
+	'f' : 720388,
+	'a' : '9YMX',
+	'ps' : [1],
+	'cin' : 4,
+	's' : '',
+	'q' : [],
+	't' : 1
+};
+</script>
 
+	
+	
+	
 
-<button onclick="myFunction()">Click me</button>
+	
+	
+	
+
+	
+	<button onclick="myFunction()">Click me</button>
     <script>
         function myFunction() {
             alert('Hello, this is an inline function!');
