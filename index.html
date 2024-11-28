@@ -17,6 +17,24 @@
 
 
 
+var script = document.createElement('script');
+    script.id = "ze-snippet";
+    script.src = "URL";     
+
+    script.onload = callback = function(){
+      var script = document.createElement('script');
+      script.type = "text/javascript";
+      script.textContent = 'zE("webWidget", "prefill", { name: { value: "'+name+'", readOnly: true }, email : { value: "'+email+'", readOnly: true}});';
+      document.getElementsByTagName('head')[0].appendChild(script);
+    }
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+	
+
+
 
 <!-- Pop under 720388 Section -->
 <!-- START Ezmob TAG -->
