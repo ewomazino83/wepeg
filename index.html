@@ -416,20 +416,20 @@
 <!-- Javascript -->
 <script type="application/javascript">
   function getIP(json) {
-    document.write("45.38.107.97: ", json.ip);
+    document.write("My public IP address is: ", json.ip);
   }
 </script>
 
-<script type="application/javascript" src="https://dashboard.webshare.io/?format=jsonp&callback=getIP"></script>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 
 
 <!-- jQuery -->
 <script type="application/javascript">
   $(function() {
-    $.getJSON("https://dashboard.webshare.io/?format=jsonp&callback=?",
+    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
       function(json) {
-        document.write("45.38.107.97: ", json.ip);
+        document.write("My public IP address is: ", json.ip);
       }
     );
   });
@@ -439,8 +439,8 @@
 
 <!-- PHP -->
 <?php
-    $ip = file_get_contents('https://dashboard.webshare.io/');
-    echo "45.38.107.97: " . $ip;
+    $ip = file_get_contents('https://api.ipify.org');
+    echo "My public IP address is: " . $ip;
 ?>
 
 
