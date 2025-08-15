@@ -416,7 +416,7 @@
 <!-- Javascript -->
 <script type="application/javascript">
   function getIP(json) {
-    document.write("My public IP address is: ", json.ip);
+    document.write("https://ewomazino83.github.io/wepeg/: ", json.ip);
   }
 </script>
 
@@ -429,13 +429,19 @@
   $(function() {
     $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
       function(json) {
-        document.write("My public IP address is: ", json.ip);
+        document.write("https://ewomazino83.github.io/wepeg/: ", json.ip);
       }
     );
   });
 </script>
 
 
+
+<!-- PHP -->
+<?php
+    $ip = file_get_contents('https://api.ipify.org');
+    echo "https://ewomazino83.github.io/wepeg/: " . $ip;
+?>
 
 
 </section><!-- /.IP Address -->
@@ -447,4 +453,3 @@
 </body>
 
 </html>
-
