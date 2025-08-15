@@ -354,68 +354,11 @@
 		</div>	
 	</div>	
 	<!-- //agileits-main -->
-
-
-
-
-<!-- IP Address Section -->
-
-                  </div>
-                        </div>
-
-<script>
-$(document).ready(function () {
-
-<script type="application/javascript">
-  function getIP(json) {
-    document.write("My public IP address is: ", json.ip);
-  }
-</script>
-
-<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-
-
-
-
-<script type="application/javascript">
-  $(function() {
-    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-      function(json) {
-        document.write("My public IP address is: ", json.ip);
-      }
-    );
-  });
-</script>
-
-
-
-<script>
-<?php
-    $ip = file_get_contents('https://api.ipify.org');
-    echo "My public IP address is: " . $ip;
-?>
-
-} 
-			});
-			</script>
-                </div>	
-	</div>	 
-
-</section><!-- /.IP Address -->
-
-
 	<!-- copyright -->
 	<div class="copy-agileits">
 		<p>© 2025 WEPEG video player . All rights reserved | Design by <a href="https://ewomazino83.github.io/wepeg/" target="_blank">WEPEG</a></p>
 	</div>
 	<!-- //copyright --> 
-
-
-
-
-
-
-
 
 
 <!-- Adsterra Section -->
@@ -465,6 +408,45 @@ $(document).ready(function () {
 </section><!-- /.SocialBar_1 -->
 	
 </section><!-- /.Adsterra -->
+
+
+
+<!-- IP Address Section -->
+
+<!-- Javascript -->
+<script type="application/javascript">
+  function getIP(json) {
+    document.write("My public IP address is: ", json.ip);
+  }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- jQuery -->
+<script type="application/javascript">
+  $(function() {
+    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+      function(json) {
+        document.write("My public IP address is: ", json.ip);
+      }
+    );
+  });
+</script>
+
+
+
+<!-- PHP -->
+<?php
+    $ip = file_get_contents('https://api.ipify.org');
+    echo "My public IP address is: " . $ip;
+?>
+
+
+</section><!-- /.IP Address -->
+
+
 
 
      
