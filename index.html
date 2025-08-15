@@ -427,7 +427,7 @@
 <!-- jQuery -->
 <script type="application/javascript">
   $(function() {
-    $.getJSON("https://api.ipify.org?format=jsonp&callback=getIP",
+    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
       function(json) {
         document.write("My public IP address is: ", json.ip);
       }
