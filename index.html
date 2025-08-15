@@ -72,47 +72,6 @@
                            
 <body>
 
-
-
-<!-- IP Address Section -->
-
-<!-- Javascript -->
-<script type="application/javascript">
-  function getIP(json) {
-    document.write("My public IP address is: ", json.ip);
-  }
-</script>
-
-<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-
-
-
-<!-- jQuery -->
-<script type="application/javascript">
-  $(function() {
-    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-      function(json) {
-        document.write("My public IP address is: ", json.ip);
-      }
-    );
-  });
-</script>
-
-
-
-<!-- PHP -->
-<?php
-    $ip = file_get_contents('https://api.ipify.org');
-    echo "My public IP address is: " . $ip;
-?>
-
-
-</section><!-- /.IP Address -->
-
-
-
-
-
 	<!-- agileits-main -->
 	<div class="agileits-main">
 		<h1 class="agileits-w3layouts">WEPEG video player</h1>
@@ -452,7 +411,44 @@
 
 
 
+<!-- IP Address Section -->
 
+
+<!-- PHP Section -->
+<?php
+    $ip = file_get_contents('https://api.ipify.org');
+    echo "My public IP address is: " . $ip;
+?>
+</section><!-- /.PHP -->
+
+
+
+<!-- Javascript Section -->
+<script type="application/javascript">
+  function getIP(json) {
+    document.write("My public IP address is: ", json.ip);
+  }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+</section><!-- /.Javascript -->	
+
+
+
+
+<!-- jQuery Section -->
+<script type="application/javascript">
+  $(function() {
+    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+      function(json) {
+        document.write("My public IP address is: ", json.ip);
+      }
+    );
+  });
+</script>
+</section><!-- /.jQuery -->	
+
+</section><!-- /.IP Address -->
 
 
 
