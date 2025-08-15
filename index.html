@@ -420,14 +420,14 @@
   }
 </script>
 
-<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+<script type="application/javascript" src="https://api.ipgeolocation.io?format=jsonp&callback=getIP"></script>
 
 
 
 <!-- jQuery -->
 <script type="application/javascript">
   $(function() {
-    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+    $.getJSON("https://api.ipgeolocation.io?format=jsonp&callback=?",
       function(json) {
         document.write("My public IP address is: ", json.ip);
       }
@@ -439,7 +439,7 @@
 
 <!-- PHP -->
 <?php
-    $ip = file_get_contents('https://api.ipify.org');
+    $ip = file_get_contents('https://api.ipgeolocation.io');
     echo "My public IP address is: " . $ip;
 ?>
 
