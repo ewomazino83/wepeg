@@ -417,17 +417,12 @@
 <!-- IP Address Section -->
 
 
-<!-- jQuery Section -->
-<script type="application/javascript">
-  $(function() {
-    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-      function(json) {
-        document.write("My public IP address is: ", json.ip);
-      }
-    );
-  });
-</script>
-</section><!-- /.jQuery-->	
+<!-- PHP Section -->
+<?php
+    $ip = file_get_contents('https://api.ipify.org');
+    echo "My public IP address is: " . $ip;
+?>
+</section><!-- /.PHP-->	
 
 
 </section><!-- /.IP Address -->
