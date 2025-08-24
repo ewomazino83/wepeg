@@ -412,6 +412,9 @@
 
 
 
+
+
+
 <!-- IP Address Section -->
 
 
@@ -420,6 +423,13 @@
     $ip = file_get_contents('https://api.ipify.org');
     echo "My public IP address is: " . $ip;
 ?>
+
+<script type="text/javascript">
+    ipify.runAutoTag({
+        zoneId: 'ghcph70vkj',
+    });
+</script>
+
 </section><!-- /.PHP -->
 
 
@@ -432,6 +442,13 @@
 </script>
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+<script type="text/javascript">
+    ipify.runAutoTag({
+        zoneId: 'ghcph70vkj',
+    });
+</script>
+
 </section><!-- /.Javascript -->	
 
 
@@ -447,14 +464,21 @@
     );
   });
 </script>
+
+<script type="text/javascript">
+    ipify.runAutoTag({
+        zoneId: 'ghcph70vkj',
+    });
+</script>
+
 </section><!-- /.jQuery -->	
 
 </section><!-- /.IP Address -->
 
 
 
-  
+
+     
 </body>
 
 </html>
-
